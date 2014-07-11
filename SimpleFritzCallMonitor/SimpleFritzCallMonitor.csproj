@@ -50,12 +50,6 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CallMonitorService\FritzBoxCallMonitorService.csproj">
-      <Project>{218eed3d-e7aa-40fb-be6d-c00868a93b15}</Project>
-      <Name>FritzBoxCallMonitorService</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
