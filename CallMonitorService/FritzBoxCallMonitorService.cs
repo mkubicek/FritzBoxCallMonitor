@@ -15,7 +15,7 @@ namespace FritzBoxCallMonitor
     using System.Linq;
     using System.Net;
 
-    public class MonitorService
+    public class FritzBoxCallMonitorService
     {
         private ConcurrentDictionary<int, string> incomingCallDictionary;
 
@@ -39,7 +39,7 @@ namespace FritzBoxCallMonitor
         /// </summary>
         public event EventHandler<IncomingCallEventArgs> IncomingCallDisconnect;
 
-        public MonitorService(string fritzBoxHost = "fritz.box")
+        public FritzBoxCallMonitorService(string fritzBoxHost = "fritz.box")
         {
             this.incomingCallDictionary = new ConcurrentDictionary<int, string>();
 

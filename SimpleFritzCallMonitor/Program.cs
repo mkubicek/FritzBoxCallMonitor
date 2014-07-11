@@ -12,15 +12,15 @@ namespace SimpleFritzCallMonitor
 
     class Program
     {
-        private static MonitorService monitorService = new MonitorService();
+        private static FritzBoxCallMonitorService fritzBoxCallMonitorService = new FritzBoxCallMonitorService();
         static void Main(string[] args)
         {
             Console.WriteLine("Starting..");
 
-            monitorService.IncomingCall += monitorService_IncomingCall;
-            monitorService.IncomingCallAnswered += monitorService_IncomingCallAnswered;
-            monitorService.IncomingCallCallerHangUp += monitorService_IncomingCallCallerHangUp;
-            monitorService.IncomingCallDisconnect += monitorService_IncomingCallDisconnect;
+            fritzBoxCallMonitorService.IncomingCall += FritzBoxCallMonitorServiceIncomingCall;
+            fritzBoxCallMonitorService.IncomingCallAnswered += FritzBoxCallMonitorServiceIncomingCallAnswered;
+            fritzBoxCallMonitorService.IncomingCallCallerHangUp += FritzBoxCallMonitorServiceIncomingCallCallerHangUp;
+            fritzBoxCallMonitorService.IncomingCallDisconnect += FritzBoxCallMonitorServiceIncomingCallDisconnect;
 
             while (true)
             {
@@ -28,22 +28,22 @@ namespace SimpleFritzCallMonitor
             }
         }
 
-        static void monitorService_IncomingCallDisconnect(object sender, IncomingCallEventArgs e)
+        static void FritzBoxCallMonitorServiceIncomingCallDisconnect(object sender, IncomingCallEventArgs e)
         {
             Write("Call ended: " + e.RemoteNumber + " how long? " + e.ConnectionDurationInSeconds + " seconds");
         }
 
-        static void monitorService_IncomingCallCallerHangUp(object sender, IncomingCallEventArgs e)
+        static void FritzBoxCallMonitorServiceIncomingCallCallerHangUp(object sender, IncomingCallEventArgs e)
         {
             Write("Ups.. Caller hang up before we were able to pick up the phone.. " + e.RemoteNumber);
         }
 
-        static void monitorService_IncomingCallAnswered(object sender, IncomingCallEventArgs e)
+        static void FritzBoxCallMonitorServiceIncomingCallAnswered(object sender, IncomingCallEventArgs e)
         {
             Write("Call answered: " + e.RemoteNumber);
         }
 
-        static void monitorService_IncomingCall(object sender, IncomingCallEventArgs e)
+        static void FritzBoxCallMonitorServiceIncomingCall(object sender, IncomingCallEventArgs e)
         {
             Write("Incoming call!: " + e.RemoteNumber);
         }

@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IncomingCall.cs" />
-    <Compile Include="MonitorService.cs" />
+    <Compile Include="FritzBoxCallMonitorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
